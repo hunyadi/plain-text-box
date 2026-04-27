@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Levente Hunyadi" />
+    <title>Plain text editor with tentative text</title>
+    <link rel="stylesheet" href="index.css" />
+    <script type="module" src="index.js"></script>
+</head>
+
+<body>
+    <h1>Auto-expanding plain text editor with committed and tentative text</h1>
+
+    <p><a href="https://github.com/hunyadi/plain-text-box">Project page</a></p>
+
+    <p>Define tentative text with the text area below. Tentative text would normally come from a service such as an AI
+        assistant, code completion or speech recognition.</p>
+
+    <textarea id="textarea-tentative" rows="2" cols="80">This is sample tentative text.</textarea>
+
+    <p>Choose an action for tentative text.</p>
+
+    <div class="buttons">
+        <button id="button-set" name="set" type="button">Set</button>
+        <button id="button-commit" name="commit" type="button">Commit</button>
+        <button id="button-clear" name="clear" type="button">Clear</button>
+    </div>
+
+    <p>Type text into the editor. The editor combines committed text with tentative text.</p>
+
+    <plain-text-box id="text-editor" max-rows="5" min-rows="2" placeholder="Type text here..."></plain-text-box>
+</body>
+
+</html>

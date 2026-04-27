@@ -1,0 +1,58 @@
+{
+  "name": "plain-text-box",
+  "version": "0.1.0",
+  "description": "Auto-expanding plain text editor with committed and tentative text",
+  "keywords": [
+    "editor",
+    "plain",
+    "textbox"
+  ],
+  "homepage": "https://github.com/hunyadi/plain-text-box",
+  "bugs": "https://github.com/hunyadi/plain-text-box/issues",
+  "license": "MIT",
+  "author": {
+    "name": "Levente Hunyadi",
+    "url": "https://hunyadi.info.hu/levente/"
+  },
+  "type": "module",
+  "main": "dist/plain-text-box.js",
+  "module": "dist/plain-text-box.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/plain-text-box.js",
+      "default": "./dist/plain-text-box.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunyadi/plain-text-box.git"
+  },
+  "scripts": {
+    "dev": "esbuild src/index.ts --bundle --format=esm --platform=browser --outfile=dist/plain-text-box.js --watch --servedir=.",
+    "typecheck": "tsc -p tsconfig.json",
+    "build:types": "tsc -p tsconfig.declarations.json",
+    "build": "npm run build:types && esbuild src/index.ts --bundle --format=esm --platform=browser --outfile=dist/plain-text-box.js",
+    "build:watch": "esbuild src/index.ts --bundle --format=esm --platform=browser --outfile=dist/plain-text-box.js --watch",
+    "test": "tsx --test",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jsdom": "^28.0",
+    "@types/node": "^25.5",
+    "esbuild": "^0.28",
+    "jsdom": "^29.0",
+    "tsx": "^4.21",
+    "typescript": "^6.0"
+  }
+}
