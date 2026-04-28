@@ -17,4 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('button-clear').addEventListener('click', () => {
         editor.clearTentativeText();
     });
+    const disableButton = document.getElementById('button-disable');
+    disableButton.textContent = editor.disabled ? 'Enable' : 'Disable';
+    disableButton.addEventListener('click', () => {
+        editor.disabled = !editor.disabled;
+        disableButton.textContent = editor.disabled ? 'Enable' : 'Disable';
+    });
 });

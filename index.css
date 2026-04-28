@@ -16,5 +16,7 @@ plain-text-box {
     padding: 5px;
     max-width: 100%;
     width: 640px;
-    color: blue;
+    --text-color-active: blue;
+    --text-color-inactive: lightgray;
+    --text-color-tentative: gray;
 }

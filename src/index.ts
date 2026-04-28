@@ -138,6 +138,10 @@ flex: 1 1 auto;
 min-width: 0;
 font-family: inherit;
 font-size: inherit;
+--text-color-base: currentColor;
+--text-color-active: var(--text-color-base);
+--text-color-inactive: rgba(from var(--text-color-base) r g b / 0.5);
+--text-color-tentative: rgba(from var(--text-color-base) r g b / 0.5);
 }
 * {
 box-sizing: border-box;
@@ -162,13 +166,16 @@ padding: 0;
 border: none;
 }
 .visual {
-color: inherit;
+color: var(--text-color-active);
 min-height: 1.5em;
 pointer-events: none;
 white-space: pre-wrap;
 }
+.committed-text {
+color: var(--text-color-active);
+}
 .tentative-text {
-opacity: 0.5;
+color: var(--text-color-tentative);
 }
 .editor {
 position: absolute;
@@ -193,6 +200,12 @@ visibility: hidden;
 pointer-events: none;
 white-space: pre-wrap;
 z-index: -1;
+}
+.disabled .committed-text {
+color: var(--text-color-inactive);
+}
+.disabled .tentative-text {
+color: var(--text-color-inactive);
 }
 .disabled .editor {
 cursor: not-allowed;

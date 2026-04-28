@@ -15,7 +15,7 @@ npm install plain-text-box
 ### Register web component
 
 ```javascript
-import { registerPlainTextBox } from "./plain-text-box.js";
+import { registerPlainTextBox } from "plain-text-box";
 
 document.addEventListener("DOMContentLoaded", () => {
     registerPlainTextBox();
@@ -25,11 +25,26 @@ document.addEventListener("DOMContentLoaded", () => {
 ### Connect web component
 
 ```html
-<plain-text-box max-rows="5" min-rows="2"
+<plain-text-box disabled max-rows="5" min-rows="2"
     placeholder="Type text here...">
 </plain-text-box>
 ```
 
+### Use CSS variables to customize appearance
+
+```css
+plain-text-box {
+    border: thin solid black;
+    border-radius: 10px;
+    padding: 5px;
+    max-width: 100%;
+    width: 640px;
+    --text-color-active: blue;
+    --text-color-inactive: lightgray;
+    --text-color-tentative: gray;
+}
+```
+
 ## Internals
 
-Structurally, the web component encapsulates an HTML `<textarea>` element, which intercepts user input, and a `<div>` element, which is responsible for visualization. The characters typed into `<textarea>` are invisible but immediately appear in the `<div>` element. While a `<textarea>` can only have a single font color and size, `<div>` allows us to fine-tune formatting, and apply a darker color to committed text and a lighter color to tentative text.
+Structurally, the web component encapsulates an HTML `<textarea>` element that intercepts user input and a `<div>` element that is responsible for visualization. The characters typed into `<textarea>` are invisible but immediately appear in the `<div>` element. While a `<textarea>` can only have a single font color and size, a `<div>` allows us to fine-tune formatting, and apply a darker color to committed text and a lighter color to tentative text.
