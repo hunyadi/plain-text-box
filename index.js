@@ -23,4 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
         editor.disabled = !editor.disabled;
         disableButton.textContent = editor.disabled ? 'Enable' : 'Disable';
     });
+    const minRowsTextBox = document.getElementById('input-min-rows');
+    minRowsTextBox.value = editor.minRows;
+    minRowsTextBox.addEventListener('input', (e) => {
+        editor.minRows = e.target.value;
+    });
+    const maxRowsTextBox = document.getElementById('input-max-rows');
+    maxRowsTextBox.value = editor.maxRows;
+    maxRowsTextBox.addEventListener('input', (e) => {
+        editor.maxRows = e.target.value;
+    });
 });

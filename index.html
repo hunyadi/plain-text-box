@@ -20,12 +20,19 @@
 
     <textarea id="textarea-tentative" rows="2" cols="80">This is sample tentative text.</textarea>
 
-    <p>Choose an action for tentative text.</p>
+    <p>Choose an action for tentative text:</p>
 
-    <div class="buttons">
+    <div>
         <button id="button-set" name="set" type="button">Set</button>
         <button id="button-commit" name="commit" type="button">Commit</button>
         <button id="button-clear" name="clear" type="button">Clear</button>
+    </div>
+
+    <p>Control text editor state:</p>
+
+    <div>
+        <span>Min rows: <input id="input-min-rows" name="min-rows" type="text" size="2" /></span>
+        <span>Max rows: <input id="input-max-rows" name="max-rows" type="text" size="2" /></span>
         <button id="button-disable" name="disable" type="button">Disable</button>
     </div>
 

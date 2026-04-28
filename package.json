@@ -60,6 +60,18 @@
     "printWidth": 160,
     "semi": true,
     "singleQuote": true,
-    "tabWidth": 4
+    "tabWidth": 4,
+    "overrides": [
+      {
+        "files": [
+          "package.json",
+          "**/*.yml",
+          "**/*.yaml"
+        ],
+        "options": {
+          "tabWidth": 2
+        }
+      }
+    ]
   }
 }
