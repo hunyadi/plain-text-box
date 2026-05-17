@@ -9,7 +9,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": [
-    "Levente"
+    "Levente",
+    "maxlength"
   ],
   "editor.formatOnSave": true,
   "files.insertFinalNewline": true,

@@ -18,10 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
         editor.clearTentativeText();
     });
     const disableButton = document.getElementById('button-disable');
-    disableButton.textContent = editor.disabled ? 'Enable' : 'Disable';
+    disableButton.textContent = editor.disabled ? disableButton.dataset['on'] : disableButton.dataset['off'];
     disableButton.addEventListener('click', () => {
         editor.disabled = !editor.disabled;
-        disableButton.textContent = editor.disabled ? 'Enable' : 'Disable';
+        disableButton.textContent = editor.disabled ? disableButton.dataset['on'] : disableButton.dataset['off'];
+    });
+    const readOnlyButton = document.getElementById('button-readonly');
+    readOnlyButton.textContent = editor.readOnly ? readOnlyButton.dataset['on'] : readOnlyButton.dataset['off'];
+    readOnlyButton.addEventListener('click', () => {
+        editor.readOnly = !editor.readOnly;
+        readOnlyButton.textContent = editor.readOnly ? readOnlyButton.dataset['on'] : readOnlyButton.dataset['off'];
     });
     const minRowsTextBox = document.getElementById('input-min-rows');
     minRowsTextBox.value = editor.minRows;
@@ -32,5 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     maxRowsTextBox.value = editor.maxRows;
     maxRowsTextBox.addEventListener('input', (e) => {
         editor.maxRows = e.target.value;
+    });
+    const maxLengthTextBox = document.getElementById('input-max-length');
+    maxLengthTextBox.value = editor.maxLength;
+    maxLengthTextBox.addEventListener('input', (e) => {
+        const value = Number.parseInt(e.target.value ?? '', 10);
+        if (!isNaN(value) && value > 0) {
+            editor.maxLength = value;
+        } else {
+            editor.maxLength = null;
+        }
     });
 });

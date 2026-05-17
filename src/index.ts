@@ -87,6 +87,22 @@ export class PlainTextBox extends HTMLElement {
         this.#synchronizeSize();
     }
 
+    get maxLength(): number | null {
+        if (this.#editor.hasAttribute('maxlength')) {
+            return this.#editor.maxLength;
+        } else {
+            return null;
+        }
+    }
+
+    set maxLength(value: number | null) {
+        if (value) {
+            this.#editor.maxLength = value;
+        } else {
+            this.#editor.removeAttribute('maxlength');
+        }
+    }
+
     get disabled(): boolean {
         return this.#editor.disabled;
     }
@@ -94,6 +110,15 @@ export class PlainTextBox extends HTMLElement {
     set disabled(value: boolean) {
         this.#editor.disabled = value;
         this.#container.classList.toggle('disabled', value);
+    }
+
+    get readOnly(): boolean {
+        return this.#editor.readOnly;
+    }
+
+    set readOnly(value: boolean) {
+        this.#editor.readOnly = value;
+        this.#container.classList.toggle('readonly', value);
     }
 
     override focus(options?: FocusOptions): void {
@@ -270,6 +295,8 @@ cursor: not-allowed;
             this.maxRows = maxRows;
         }
 
+        this.maxLength = getPositiveIntegerAttribute(this, 'max-length');
+
         const placeholder = this.getAttribute('placeholder');
         if (placeholder) {
             this.#placeholder = placeholder;
@@ -278,6 +305,10 @@ cursor: not-allowed;
 
         if (this.hasAttribute('disabled')) {
             this.disabled = true;
+        }
+
+        if (this.hasAttribute('readonly')) {
+            this.readOnly = true;
         }
     }
 

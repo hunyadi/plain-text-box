@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 ### Connect web component
 
 ```html
-<plain-text-box disabled max-rows="5" min-rows="2"
+<plain-text-box disabled readonly max-rows="5" min-rows="2" max-length="1000"
     placeholder="Type text here...">
 </plain-text-box>
 ```
