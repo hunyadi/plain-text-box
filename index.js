@@ -5,6 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /** @type {PlainTextBox} */
     const editor = document.getElementById('text-editor');
+
+    // test web component connect/disconnect callback
+    document.body.removeChild(editor);
+    document.body.appendChild(editor);
+
     /** @type {HTMLTextAreaElement} */
     const tentative = document.getElementById('textarea-tentative');
 
