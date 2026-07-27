@@ -12,7 +12,8 @@ plain-text-box {
     padding: 5px;
     max-width: 100%;
     width: 640px;
-    --text-color-active: blue;
+    --text-color-active: black;
     --text-color-inactive: lightgray;
     --text-color-tentative: gray;
+    --caret-color: black;
 }

@@ -34,11 +34,12 @@
         <span>Min rows: <input id="input-min-rows" name="min-rows" type="number" min="1" max="10" size="2" /></span>
         <span>Max rows: <input id="input-max-rows" name="max-rows" type="number" min="1" max="20" size="2" /></span>
         <span>Max length: <input id="input-max-length" name="max-length" type="text" size="2" /></span>
+        <span>Text color: <input id="input-text-color" type="color" /></span>
         <button id="button-disable" name="disable" type="button" data-on="Enable" data-off="Disable"></button>
         <button id="button-readonly" name="readonly" type="button" data-on="Read/Write" data-off="Read only"></button>
     </div>
 
-    <p>Type text into the editor. The editor combines committed text with tentative text.</p>
+    <p><strong>Type text into the editor.</strong> The editor combines committed text with tentative text.</p>
 
     <plain-text-box id="text-editor" max-rows="5" min-rows="2" max-length="1000"
         placeholder="Type text here..."></plain-text-box>

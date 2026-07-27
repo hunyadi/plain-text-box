@@ -66,6 +66,7 @@ font-size: inherit;
 --text-color-active: var(--text-color-base);
 --text-color-inactive: rgba(from var(--text-color-base) r g b / 0.5);
 --text-color-tentative: rgba(from var(--text-color-base) r g b / 0.5);
+--caret-color: var(--text-color-active);
 }
 * {
 box-sizing: border-box;
@@ -106,7 +107,7 @@ position: absolute;
 inset: 0;
 resize: none;
 color: transparent;
-caret-color: black;
+caret-color: var(--caret-color);
 background: transparent;
 outline: none;
 overflow: hidden;

@@ -54,4 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
             editor.maxLength = null;
         }
     });
+    const textColor = document.getElementById('input-text-color');
+    textColor.addEventListener('input', (e) => {
+        editor.style.setProperty('--text-color-active', e.target.value);
+        editor.style.setProperty('--caret-color', e.target.value);
+    });
 });

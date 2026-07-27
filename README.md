@@ -42,6 +42,7 @@ plain-text-box {
     --text-color-active: blue;
     --text-color-inactive: lightgray;
     --text-color-tentative: gray;
+    --caret-color: black;
 }
 ```
 
