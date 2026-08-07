@@ -117,6 +117,10 @@ overflow: hidden;
 outline: none;
 box-shadow: none;
 }
+.editor::placeholder {
+color: var(--text-color-active);
+opacity: 0.67;
+}
 .measure {
 position: absolute;
 left: 0;
